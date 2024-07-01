@@ -17,7 +17,7 @@ defmodule CodiceFiscale.Validation do
   def validate_sesso(_), do: {:error, "Sesso non valido"}
 
   def validate_comune(comune) do
-    if CodiceFiscale.DataLoader.get_comune_codice(comune) == "XXXX" do
+    if CodiceFiscale.DataLoader.get_comune_codice(comune) == "NOT FOUND" do
       {:error, "Comune non valido"}
     else
       :ok

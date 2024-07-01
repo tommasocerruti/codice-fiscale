@@ -3,46 +3,36 @@ defmodule CodiceFiscale.Conversion do
   @months %{"01" => "A", "02" => "B", "03" => "C", "04" => "D", "05" => "E", "06" => "H", "07" => "L", "08" => "M", "09" => "P", "10" => "R", "11" => "S", "12" => "T"}
   @comuni CodiceFiscale.DataLoader.load_comuni()
 
-  def cognome(cognome) do
-    cognome
-    |> String.replace(~r/[^A-Z]/, "")
-    |> take_chars()
-    |> String.pad_trailing(3, "X")
-  end
 
   def nome(nome) do
-    nome
-    |> String.replace(~r/[^A-Z]/, "")
-    |> take_chars_for_name()
-    |> String.pad_trailing(3, "X")
+    consonanti = String.graphemes(nome) |> Enum.filter(&consonante?/1)
+    vocali = String.graphemes(nome) |> Enum.filter(&vocale?/1)
+
+    risultato =
+      case length(consonanti) do
+        n when n > 3 -> [Enum.at(consonanti, 0), Enum.at(consonanti, 2), Enum.at(consonanti, 3)]
+        3 -> [Enum.at(consonanti, 0), Enum.at(consonanti, 1), Enum.at(consonanti, 2)]
+        2 -> [Enum.at(consonanti, 0), Enum.at(consonanti, 1), Enum.at(vocali ++ ["X"], 0)]
+        1 -> [Enum.at(consonanti, 0) | Enum.take(vocali ++ ["X", "X"], 2)]
+        _ -> Enum.take(vocali ++ ["X", "X", "X"], 3)
+      end
+
+    Enum.join(risultato)
   end
 
-  defp take_chars(string) do
-    consonanti = String.graphemes(string) |> Enum.filter(&(&1 not in @vocals))
-    vocals = String.graphemes(string) |> Enum.filter(&(&1 in @vocals))
-    take_chars(consonanti, vocals)
-  end
+  def cognome(cognome) do
+    consonanti = String.graphemes(nome) |> Enum.filter(&consonante?/1)
+    vocali = String.graphemes(nome) |> Enum.filter(&vocale?/1)
 
-  defp take_chars(consonanti, vocals) when length(consonanti) >= 3 do
-    Enum.join(Enum.take(consonanti, 3))
-  end
+    risultato =
+      case length(consonanti) do
+        n when n > 2 -> [Enum.at(consonanti, 0), Enum.at(consonanti, 1), Enum.at(consonanti, 2)]
+        2 -> [Enum.at(consonanti, 0), Enum.at(consonanti, 1), Enum.at(vocali ++ ["X"], 0)]
+        1 -> [Enum.at(consonanti, 0) | Enum.take(vocali ++ ["X", "X"], 2)]
+        _ -> Enum.take(vocali ++ ["X", "X", "X"], 3)
+      end
 
-  defp take_chars(consonanti, vocals) do
-    Enum.join(consonanti ++ Enum.take(vocals, 3 - length(consonanti)))
-  end
-
-  defp take_chars_for_name(string) do
-    consonanti = String.graphemes(string) |> Enum.filter(&(&1 not in @vocals))
-
-    case length(consonanti) do
-      n when n > 3 ->
-        consonanti
-        |> Enum.drop(1)
-        |> Enum.take(3)
-        |> Enum.join()
-      _ ->
-        take_chars(consonanti, String.graphemes(string) |> Enum.filter(&(&1 in @vocals)))
-    end
+    Enum.join(risultato)
   end
 
   def data_nascita(data_nascita, sesso) do
@@ -61,4 +51,13 @@ defmodule CodiceFiscale.Conversion do
     [yyyy, mm, dd] = String.split(date, "-")
     {String.to_integer(yyyy), mm, String.to_integer(dd)}
   end
+
+  defp vocale?(char) do
+    char in @vocals
+  end
+
+  defp consonante?(char) do
+    char not in @vocals
+  end
+
 end

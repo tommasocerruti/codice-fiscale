@@ -17,7 +17,7 @@ defmodule CodiceFiscale.DataLoader do
   def get_comune_codice(comune) do
     case :ets.lookup(:comuni, comune) do
       [{_, codice}] -> codice
-      [] -> "XXXX"
+      [] -> "NOT FOUND"
     end
   end
 end
