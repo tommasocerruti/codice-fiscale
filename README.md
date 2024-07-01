@@ -20,3 +20,7 @@ and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/codice_fiscale>.
 
 # codice-fiscale
+
+## things-to-do
+1. Correct Data Loader
+2. Insert in CSV countries
