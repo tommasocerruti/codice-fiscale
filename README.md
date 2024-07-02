@@ -23,3 +23,4 @@ be found at <https://hexdocs.pm/codice_fiscale>.
 
 ## things-to-do
 1. Correct Data Loader (NimbleCSV dependency)
+2. Handling errors
