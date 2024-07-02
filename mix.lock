@@ -1,3 +1,4 @@
 %{
+  "levenshtein": {:hex, :levenshtein, "0.3.0", "c8787b1035d955617d1b57d31acfa04a6e58e912c26ad1c71aced5ae048c040f", [:mix], [], "hexpm", "17a5f8235d147087375e399e2288720cb01b7cc5c3f337c45734e4f4d7941bf2"},
   "nimble_csv": {:hex, :nimble_csv, "1.2.0", "4e26385d260c61eba9d4412c71cea34421f296d5353f914afe3f2e71cce97722", [:mix], [], "hexpm", "d0628117fcc2148178b034044c55359b26966c6eaa8e2ce15777be3bbc91b12a"},
 }

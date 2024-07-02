@@ -23,7 +23,8 @@ defmodule CodiceFiscale.MixProject do
 
   defp deps do
     [
-      {:nimble_csv, "~> 1.2"}
+      {:nimble_csv, "~> 1.2.0"},
+      {:levenshtein, "~> 0.3.0"}
     ]
   end
 
