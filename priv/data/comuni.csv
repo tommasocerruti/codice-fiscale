@@ -7895,3 +7895,218 @@ Villasalto(SU)	M016
 Villasimius(SU)	B738
 Villasor(SU)	M025
 Villaspeciosa(SU)	M026
+Albania(AL)	Z100
+Andorra(AD)	Z101
+Austria(AT)	Z102
+Belgio(BE)	Z103
+Bulgaria(BG)	Z104
+Danimarca(DK)	Z107
+Finlandia(FI)	Z109
+Francia(FR)	Z110
+Germania(DE)	Z112
+Regno Unito(UK)	Z114
+Grecia(GR)	Z115
+Irlanda(IE)	Z116
+Islanda(IS)	Z117
+Liechtenstein(LI)	Z119
+Lussemburgo(LU)	Z120
+Malta(MT)	Z121
+Monaco(MC)	Z123
+Norvegia(NO)	Z125
+Paesi Bassi(NL)	Z126
+Polonia(PL)	Z127
+Portogallo(PT)	Z128
+Romania(RO)	Z129
+San Marino(SM)	Z130
+Spagna(ES)	Z131
+Svezia(SE)	Z132
+Svizzera(CH)	Z133
+Ucraina(UA)	Z138
+Ungheria(HU)	Z134
+Federazione russa(RU)	Z154
+Stato della Città del Vaticano(VA)	Z106
+Estonia(EE)	Z144
+Lettonia(LV)	Z145
+Lituania(LT)	Z146
+Croazia(HR)	Z149
+Slovenia(SI)	Z150
+Bosnia-Erzegovina(BA)	Z153
+Macedonia del Nord(MK)	Z148
+Moldova(MD)	Z140
+Slovacchia(SK)	Z155
+Bielorussia(BY)	Z139
+Repubblica ceca(CZ)	Z156
+Montenegro(ME)	Z159
+Serbia(RS)	Z158
+Kosovo(KS)	Z160
+Afghanistan(AF)	Z200
+Arabia Saudita(SA)	Z203
+Bahrein(BH)	Z204
+Bangladesh(BD)	Z249
+Bhutan(BT)	Z205
+Myanmar/Birmania(MM)	Z206
+Brunei Darussalam(BN)	Z207
+Cambogia(KH)	Z208
+Sri Lanka(LK)	Z209
+Cina(CN)	Z210
+Cipro(CY)	Z211
+Corea del Nord(KP)	Z214
+Corea del Sud(KR)	Z213
+Emirati Arabi Uniti(AE)	Z215
+Filippine(PH)	Z216
+Palestina(PS)	Z161
+Giappone(JP)	Z219
+Giordania(JO)	Z220
+India(IN)	Z222
+Indonesia(ID)	Z223
+Iran(IR)	Z224
+Iraq(IQ)	Z225
+Israele(IL)	Z226
+Kuwait(KW)	Z227
+Laos(LA)	Z228
+Libano(LB)	Z229
+Timor Leste(TL)	Z242
+Maldive(MV)	Z232
+Malaysia(MY)	Z247
+Mongolia(MN)	Z233
+Nepal(NP)	Z234
+Oman(OM)	Z235
+Pakistan(PK)	Z236
+Qatar(QA)	Z237
+Singapore(SG)	Z248
+Siria(SY)	Z240
+Thailandia(TH)	Z241
+Turchia(TR)	Z243
+Vietnam(VN)	Z251
+Yemen(YE)	Z246
+Kazakhstan(KZ)	Z255
+Uzbekistan(UZ)	Z259
+Armenia(AM)	Z252
+Azerbaigian(AZ)	Z253
+Georgia(GE)	Z254
+Kirghizistan(KG)	Z256
+Tagikistan(TJ)	Z257
+Taiwan(TW)	Z217
+Turkmenistan(TM)	Z258
+Algeria(DZ)	Z301
+Angola(AO)	Z302
+Costa d'Avorio(CI)	Z313
+Benin(BJ)	Z314
+Botswana(BW)	Z358
+Burkina Faso(BF)	Z354
+Burundi(BI)	Z305
+Camerun(CM)	Z306
+Capo Verde(CV)	Z307
+Repubblica Centrafricana(CF)	Z308
+Ciad(TD)	Z309
+Comore(KM)	Z310
+Congo(CG)	Z311
+Egitto(EG)	Z336
+Etiopia(ET)	Z315
+Gabon(GA)	Z316
+Gambia(GM)	Z317
+Ghana(GH)	Z318
+Gibuti(DJ)	Z361
+Guinea(GN)	Z319
+Guinea-Bissau(GW)	Z320
+Guinea equatoriale(GQ)	Z321
+Kenya(KE)	Z322
+Lesotho(LS)	Z359
+Liberia(LR)	Z325
+Libia(LY)	Z326
+Madagascar(MG)	Z327
+Malawi(MW)	Z328
+Mali(ML)	Z329
+Marocco(MA)	Z330
+Mauritania(MR)	Z331
+Maurizio(MU)	Z332
+Mozambico(MZ)	Z333
+Namibia(NA)	Z300
+Niger(NE)	Z334
+Nigeria(NG)	Z335
+Ruanda(RW)	Z338
+Sao Tomé e Principe(ST)	Z341
+Seychelles(SC)	Z342
+Senegal(SN)	Z343
+Sierra Leone(SL)	Z344
+Somalia(SO)	Z345
+Sudafrica(ZA)	Z347
+Sudan(SD)	Z348
+Eswatini(SZ)	Z349
+Tanzania(TZ)	Z357
+Togo(TG)	Z351
+Tunisia(TN)	Z352
+Uganda(UG)	Z353
+Repubblica Democratica del Congo(CD)	Z312
+Zambia(ZM)	Z355
+Zimbabwe(ZW)	Z337
+Eritrea(ER)	Z368
+Sud Sudan(SS)	Z907
+Antigua e Barbuda(AG)	Z532
+Bahamas(BS)	Z502
+Barbados(BB)	Z522
+Belize(BZ)	Z512
+Canada(CA)	Z401
+Costa Rica(CR)	Z503
+Cuba(CU)	Z504
+Dominica(DM)	Z526
+Repubblica Dominicana(DO)	Z505
+El Salvador(SV)	Z506
+Giamaica(JM)	Z507
+Grenada(GD)	Z524
+Guatemala(GT)	Z509
+Haiti(HT)	Z510
+Honduras(HN)	Z511
+Messico(MX)	Z514
+Nicaragua(NI)	Z515
+Panama(PA)	Z516
+Santa Lucia(LC)	Z527
+Saint Vincent e Grenadine(VC)	Z528
+Saint Kitts e Nevis(KN)	Z533
+Stati Uniti d'America(US)	Z404
+Argentina(AR)	Z600
+Bolivia(BO)	Z601
+Brasile(BR)	Z602
+Cile(CL)	Z603
+Colombia(CO)	Z604
+Ecuador(EC)	Z605
+Guyana(GY)	Z606
+Paraguay(PY)	Z610
+Perù(PE)	Z611
+Suriname(SR)	Z608
+Trinidad e Tobago(TT)	Z612
+Uruguay(UY)	Z613
+Venezuela(VE)	Z614
+Australia(AU)	Z700
+Figi(FJ)	Z704
+Kiribati(KI)	Z731
+Isole Marshall(MH)	Z711
+Stati Federati di Micronesia(FM)	Z735
+Nauru(NR)	Z713
+Nuova Zelanda(NZ)	Z719
+Palau(PW)	Z734
+Papua Nuova Guinea(PG)	Z730
+Isole Salomone(SB)	Z724
+Samoa(WS)	Z726
+Tonga(TO)	Z728
+Tuvalu(TV)	Z732
+Vanuatu(VU)	Z733
+Nuova Caledonia(NC)	Z716
+Bermuda(BM)	Z400
+Isole Cook (NZ)(CK)	Z703
+Gibilterra(GI)	Z113
+Isole Cayman(KY)	Z530
+Anguilla(AI)	Z529
+Polinesia francese(PF)	Z723
+Isole Fær Øer(FO)	Z108
+Aruba(AW)	Z501
+Groenlandia(GL)	Z402
+Isole Falkland (Malvine)(FK)	Z609
+Isola di Man(IM)	Z122
+Montserrat(MS)	Z531
+Isole Pitcairn(PN)	Z722
+Saint Pierre e Miquelon(PM)	Z403
+Sant'Elena(SH)	Z340
+Isole Turks e Caicos(TC)	Z519
+Isole Vergini britanniche(VG)	Z525
+Wallis e Futuna(WF)	Z729
