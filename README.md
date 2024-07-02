@@ -23,4 +23,4 @@ be found at <https://hexdocs.pm/codice_fiscale>.
 
 ## things-to-do
 1. Correct Data Loader
-2. Insert in CSV countries
+2. Facilitate search in CSV
