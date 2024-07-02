@@ -22,5 +22,4 @@ be found at <https://hexdocs.pm/codice_fiscale>.
 # codice-fiscale
 
 ## things-to-do
-1. Correct Data Loader
-2. Facilitate search in CSV
+1. Correct Data Loader (NimbleCSV dependency)
