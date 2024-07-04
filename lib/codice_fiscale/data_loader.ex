@@ -24,7 +24,10 @@ defmodule CodiceFiscale.DataLoader do
 
   defp find_closest_comune(comune) do
     :ets.tab2list(:comuni)
-    |> Enum.map(fn {c, codice} -> {c, codice, LVN.distance(c, comune)} end)
+    |> Enum.map(fn {c, codice} ->
+      c = String.replace(c, "\t", " ")
+      {c, codice, LVN.distance(c, comune)}
+    end)
     |> Enum.group_by(fn {_c, _codice, distance} -> distance end)
     |> Enum.min_by(fn {distance, _list} -> distance end)
     |> case do
@@ -37,5 +40,4 @@ defmodule CodiceFiscale.DataLoader do
         end
     end
   end
-
 end

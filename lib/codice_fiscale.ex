@@ -14,7 +14,7 @@ defmodule CodiceFiscale do
 
   ## Esempio
 
-      iex> CodiceFiscale.calcola("Mario", "Rossi", "1980-01-01", "M", "Roma")
+      iex> CodiceFiscale.calcola("Mario", "Rossi", "1980-01-01", "M", "Roma(RM)")
       {:ok, "RSSMRA80A01H501X"}
 
   """
