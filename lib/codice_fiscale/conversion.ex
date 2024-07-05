@@ -1,8 +1,6 @@
 defmodule CodiceFiscale.Conversion do
   @vocals ["A", "E", "I", "O", "U"]
   @months %{"01" => "A", "02" => "B", "03" => "C", "04" => "D", "05" => "E", "06" => "H", "07" => "L", "08" => "M", "09" => "P", "10" => "R", "11" => "S", "12" => "T"}
-  @comuni CodiceFiscale.DataLoader.load_comuni()
-
 
   def nome(nome) do
     consonanti = String.graphemes(nome) |> Enum.filter(&consonante?/1)
@@ -21,8 +19,8 @@ defmodule CodiceFiscale.Conversion do
   end
 
   def cognome(cognome) do
-    consonanti = String.graphemes(nome) |> Enum.filter(&consonante?/1)
-    vocali = String.graphemes(nome) |> Enum.filter(&vocale?/1)
+    consonanti = String.graphemes(cognome) |> Enum.filter(&consonante?/1)
+    vocali = String.graphemes(cognome) |> Enum.filter(&vocale?/1)
 
     risultato =
       case length(consonanti) do
@@ -41,10 +39,6 @@ defmodule CodiceFiscale.Conversion do
     month = Map.get(@months, mm)
     day = if sesso == "F", do: Integer.to_string(dd + 40), else: Integer.to_string(dd)
     "#{year}#{month}#{String.pad_leading(day, 2, "0")}"
-  end
-
-  def comune(comune) do
-    CodiceFiscale.DataLoader.get_comune_codice(comune)
   end
 
   defp parse_date(date) do
