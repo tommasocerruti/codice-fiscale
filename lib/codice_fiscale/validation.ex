@@ -16,11 +16,10 @@ defmodule CodiceFiscale.Validation do
   def validate_sesso("F"), do: :ok
   def validate_sesso(_), do: {:error, "Sesso non valido"}
 
-  def validate_comune(comune) do
-    if CodiceFiscale.DataLoader.get_comune_codice(comune) == "NOT FOUND" do
-      {:error, "Comune non valido"}
-    else
-      :ok
+  def validate_codice(codice) do
+    case Regex.match?(~r/^[A-Z]\d{3}$/, codice) do
+      true -> :ok
+      false -> {:error, "Codice non valido"}
     end
   end
 end
