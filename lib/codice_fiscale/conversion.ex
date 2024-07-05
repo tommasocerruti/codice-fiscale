@@ -1,6 +1,19 @@
 defmodule CodiceFiscale.Conversion do
   @vocals ["A", "E", "I", "O", "U"]
-  @months %{"01" => "A", "02" => "B", "03" => "C", "04" => "D", "05" => "E", "06" => "H", "07" => "L", "08" => "M", "09" => "P", "10" => "R", "11" => "S", "12" => "T"}
+  @months %{
+    "01" => "A",
+    "02" => "B",
+    "03" => "C",
+    "04" => "D",
+    "05" => "E",
+    "06" => "H",
+    "07" => "L",
+    "08" => "M",
+    "09" => "P",
+    "10" => "R",
+    "11" => "S",
+    "12" => "T"
+  }
 
   def nome(nome) do
     consonanti = String.graphemes(nome) |> Enum.filter(&consonante?/1)
@@ -53,5 +66,4 @@ defmodule CodiceFiscale.Conversion do
   defp consonante?(char) do
     char not in @vocals
   end
-
 end

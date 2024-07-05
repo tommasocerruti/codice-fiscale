@@ -13,6 +13,7 @@ defmodule CodiceFiscale do
   """
   def calcola(nome, cognome, data_nascita, sesso, codice) do
     Logger.info("Calcolo del codice fiscale per #{nome} #{cognome}")
+
     with :ok <- Validation.validate_nome(nome),
          :ok <- Validation.validate_cognome(cognome),
          :ok <- Validation.validate_data_nascita(data_nascita),
