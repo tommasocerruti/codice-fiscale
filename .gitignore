@@ -24,3 +24,6 @@ codice_fiscale-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# Ignore future implementations/ideas
+/defferred/
