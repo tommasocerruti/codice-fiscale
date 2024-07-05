@@ -1,44 +1,63 @@
 defmodule CodiceFiscale.ConversionTest do
   use ExUnit.Case
   alias CodiceFiscale.Conversion
+  alias CodiceFiscale.StringProcessor
 
   describe "nome/1" do
     test "returns correct codice for a name with more than 3 consonants" do
-      assert Conversion.nome("Francesco") == "FRC"
+      assert "Francesco"
+             |> StringProcessor.process()
+             |> Conversion.nome() == "FNC"
     end
 
     test "returns correct codice for a name with exactly 3 consonants" do
-      assert Conversion.nome("Luca") == "LCA"
+      assert "Luca"
+             |> StringProcessor.process()
+             |> Conversion.nome() == "LCU"
     end
 
     test "returns correct codice for a name with 2 consonants and 2 vowels" do
-      assert Conversion.nome("Rita") == "RTA"
+      assert "Rita"
+             |> StringProcessor.process()
+             |> Conversion.nome() == "RTI"
     end
 
     test "returns correct codice for a name with 1 consonant and 2 vowels" do
-      assert Conversion.nome("Eva") == "EVX"
+      assert "Eva"
+             |> StringProcessor.process()
+             |> Conversion.nome() == "VEA"
     end
 
     test "returns correct codice for a name with no consonants" do
-      assert Conversion.nome("Iaia") == "AIX"
+      assert "Iaia"
+             |> StringProcessor.process()
+             |> Conversion.nome() == "IAI"
     end
   end
 
   describe "cognome/1" do
     test "returns correct codice for a surname with more than 2 consonants" do
-      assert Conversion.cognome("Bianchi") == "BNC"
+      assert "Bianchi"
+             |> StringProcessor.process()
+             |> Conversion.cognome() == "BNC"
     end
 
     test "returns correct codice for a surname with exactly 2 consonants" do
-      assert Conversion.cognome("Li") == "LIX"
+      assert "Li"
+             |> StringProcessor.process()
+             |> Conversion.cognome() == "LIX"
     end
 
     test "returns correct codice for a surname with 1 consonant and 2 vowels" do
-      assert Conversion.cognome("Io") == "IOX"
+      assert "Io"
+             |> StringProcessor.process()
+             |> Conversion.cognome() == "IOX"
     end
 
     test "returns correct codice for a surname with no consonants" do
-      assert Conversion.cognome("Ai") == "AIX"
+      assert "Ai"
+             |> StringProcessor.process()
+             |> Conversion.cognome() == "AIX"
     end
   end
 
