@@ -22,10 +22,7 @@ defmodule CodiceFiscale.MixProject do
   end
 
   defp deps do
-    [
-      {:nimble_csv, "~> 1.2.0"},
-      {:levenshtein, "~> 0.3.0"}
-    ]
+    []
   end
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]
