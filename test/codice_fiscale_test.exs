@@ -9,11 +9,13 @@ defmodule CodiceFiscaleTest do
     end
 
     test "successfully calculates codice fiscale for Pinco Pallo" do
-      assert {:ok, "PLLPNC96E14L117A"} = CodiceFiscale.calcola("Pinco", "Pallo", "1996-05-14", "M", "L117")
+      assert {:ok, "PLLPNC96E14L117A"} =
+               CodiceFiscale.calcola("Pinco", "Pallo", "1996-05-14", "M", "L117")
     end
 
     test "successfully calculates codice fiscale for Test Prova" do
-      assert {:ok, "PRVTST01A20F205F"} = CodiceFiscale.calcola("Test", "Prova", "2001-01-20", "M", "F205")
+      assert {:ok, "PRVTST01A20F205F"} =
+               CodiceFiscale.calcola("Test", "Prova", "2001-01-20", "M", "F205")
     end
 
     test "returns error for invalid name" do

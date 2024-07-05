@@ -14,13 +14,14 @@ defmodule CodiceFiscale do
   def calcola(nome, cognome, data_nascita, sesso, codice) do
     Logger.info("Calcolo del codice fiscale per #{nome} #{cognome}")
 
-    with :ok <- Validation.validate_nome(nome),
-         :ok <- Validation.validate_cognome(cognome),
+    cognome_processed = StringProcessor.process(cognome)
+    nome_processed = StringProcessor.process(nome)
+
+    with :ok <- Validation.validate_nome(nome_processed),
+         :ok <- Validation.validate_cognome(cognome_processed),
          :ok <- Validation.validate_data_nascita(data_nascita),
          :ok <- Validation.validate_sesso(sesso),
          :ok <- Validation.validate_codice(codice) do
-      cognome_processed = StringProcessor.process(cognome)
-      nome_processed = StringProcessor.process(nome)
       codice_cognome = Conversion.cognome(cognome_processed)
       codice_nome = Conversion.nome(nome_processed)
       codice_data = Conversion.data_nascita(data_nascita, sesso)
