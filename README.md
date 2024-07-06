@@ -5,6 +5,7 @@
 
 `CodiceFiscale` is an [Elixir](https://elixir-lang.org/) library providing different functions regarding the Italian fiscal code (codice fiscale).   
 It provides functions to generate a codice fiscale based on personal information and validate whether a given codice fiscale corresponds to provided personal data.  
+Documentation can be found at https://hexdocs.pm/codice_fiscale.
 *Per leggere questo README in italiano, clicca [qui](README-it.md).*
 
 ## Features
