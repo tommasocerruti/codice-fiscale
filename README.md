@@ -31,12 +31,14 @@ $ mix deps.get
 
 ## Usage
 ### Calculate Codice Fiscale
+Calculates codice fiscale given name, surname, birthdate, sex and Belfiore code.    
 ```elixir
 iex> CodiceFiscale.calcola("Mario", "Rossi", "1980-01-01", "M", "H501")
 {:ok, "RSSMRA80A01H501U"}
 ```
 
 ### Verify Codice Fiscale
+Verifies codice fiscale comparing it to provided personal data.   
 ```elixir
 iex> CodiceFiscale.verifica("RSSMRA80A01H501U", %{nome: "Mario", cognome: "Rossi", data_nascita: "1980-01-01", sesso: "M", codice: "H501"})
 {:ok, "Il codice fiscale corrisponde ai dati anagrafici."}
