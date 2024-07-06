@@ -4,7 +4,7 @@
 [![Contributi](https://img.shields.io/badge/contributi-benvenuti-brightgreen.svg)](CONTRIBUTING.md)
 
 `CodiceFiscale` è una libreria [Elixir](https://elixir-lang.org/) che fornisce diverse funzioni relative al codice fiscale italiano.   
-Essa permette di generare un codice fiscale basato su dati anagrafici e di verificare se un codice fiscale fornito corrisponde ai dati anagrafici forniti.
+Essa permette di generare un codice fiscale basato su dati anagrafici e di verificare se un codice fiscale fornito corrisponde ai dati anagrafici forniti.   
 *To read this README in English, click [here](./README.md).*
 
 ## Funzionalità
