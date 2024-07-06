@@ -54,6 +54,7 @@ config :codice_fiscale, logging_enabled: true
 
 ## Contributi
 I contributi sono benvenuti! Non esitare a inviare issue e pull request.   
+Prima di contribuire, leggi [qui](CONTRIBUTING.md).
 
 ## Licenza
 Questa libreria è rilasciata sotto la Licenza MIT.    

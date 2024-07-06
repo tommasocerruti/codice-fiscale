@@ -53,7 +53,8 @@ config :codice_fiscale, logging_enabled: true
 ```
 
 ## Contributing
-Contributions are welcome! Please feel free to submit issues and pull requests.
+Contributions are welcome! Please feel free to submit issues and pull requests.    
+Before contributing, read [here](CONTRIBUTING.md).
 
 ## License
 This library is released under the MIT License.
