@@ -9,7 +9,7 @@ defmodule CodiceFiscale.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       elixirc_paths: elixirc_paths(Mix.env()),
-      description: "Framework per il calcolo del codice fiscale italiano.",
+      description: "Library to calculate Italian fiscal code (codice fiscale).",
       package: package(),
       source_url: "https://github.com/tommasocerruti/codice_fiscale"
     ]
