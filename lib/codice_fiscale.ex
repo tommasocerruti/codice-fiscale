@@ -54,7 +54,6 @@ defmodule CodiceFiscale do
         end
 
       {:error, msg} ->
-        Logger.error("Errore nel calcolo del codice fiscale: #{msg}")
         {:error, "Errore nel calcolo del codice fiscale: #{msg}"}
     end
   end
