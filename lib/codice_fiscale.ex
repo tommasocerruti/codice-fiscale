@@ -41,7 +41,7 @@ defmodule CodiceFiscale do
         %{nome: nome, cognome: cognome, data_nascita: data_nascita, sesso: sesso, codice: codice} =
           _dati_anagrafici
       ) do
-
+    Logger.info("Verifica che #{codice_fiscale} sia il codice fiscale di #{nome} #{cognome}")
     case calcola(nome, cognome, data_nascita, sesso, codice) do
       {:ok, codice_calcolato} ->
         if codice_calcolato == codice_fiscale do
