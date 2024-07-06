@@ -1,4 +1,7 @@
 defmodule CodiceFiscale.CharCheck do
+  @moduledoc """
+  Calculates the check character of codice fisale.
+  """
   @letters "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
   @weights_even %{

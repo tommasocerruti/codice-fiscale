@@ -1,4 +1,8 @@
 defmodule CodiceFiscale.Conversion do
+  @moduledoc """
+  Convert the parameters to the respective format useful for codice fiscale.
+  """
+
   @vocals ["A", "E", "I", "O", "U"]
   @months %{
     "01" => "A",

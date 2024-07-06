@@ -1,7 +1,9 @@
 defmodule Mix.Tasks.Ci do
   use Mix.Task
 
-  @shortdoc "Runs Tests, Format, Credo, and Dialyzer"
+  @moduledoc """
+  Runs Tests, Format, Credo, and Dialyzer
+  """
 
   def run(_) do
     Mix.shell().info("Running tests...")

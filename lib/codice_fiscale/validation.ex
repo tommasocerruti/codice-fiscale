@@ -1,4 +1,8 @@
 defmodule CodiceFiscale.Validation do
+  @moduledoc """
+  Validate the parameters useful for codice fiscale.
+  """
+
   def validate_nome(nome) when is_binary(nome) and byte_size(nome) > 0, do: :ok
   def validate_nome(_), do: {:error, "Nome non valido"}
 

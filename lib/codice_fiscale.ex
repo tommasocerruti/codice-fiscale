@@ -2,10 +2,15 @@ defmodule CodiceFiscale do
   alias CodiceFiscale.{Conversion, CharCheck, Validation, StringProcessor}
   require Logger
 
-  @doc """
-  Calcola il codice fiscale dato un nome, cognome, data di nascita, sesso e codice ISTAT del luogo di nascita.
+  @moduledoc """
+  Module containing the main functions regarding codice fiscale.
+  """
 
-  ## Esempio
+  @doc """
+  ITA: Calcola il codice fiscale dato un nome, cognome, data di nascita, sesso e codice Belfiore del luogo di nascita.
+  ENG: Calculates the codice fiscale given a name, surname, birthdate, sex and Belfiore code of the birthplace.
+
+  ## Example
 
       iex> CodiceFiscale.calcola("Mario", "Rossi", "1980-01-01", "M", "H501")
       {:ok, "RSSMRA80A01H501U"}
@@ -36,6 +41,16 @@ defmodule CodiceFiscale do
     end
   end
 
+  @doc """
+  ITA: Verifica se un codice fiscale calcolato corrisponde ai dati anagrafici forniti.
+  ENG: Verifies if a codice fiscale calculated corresponds to the given anagraphic data.
+
+  ## Esempio
+
+      iex> CodiceFiscale.verifica("RSSMRA80A01H501U", %{nome: "Mario", cognome: "Rossi", data_nascita: "1980-01-01", sesso: "M", codice: "H501"})
+      {:ok, "Il codice fiscale corrisponde ai dati anagrafici."}
+
+  """
   def verifica(
         codice_fiscale,
         %{nome: nome, cognome: cognome, data_nascita: data_nascita, sesso: sesso, codice: codice} =
