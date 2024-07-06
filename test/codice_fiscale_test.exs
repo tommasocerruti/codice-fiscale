@@ -58,4 +58,62 @@ defmodule CodiceFiscaleTest do
                CodiceFiscale.calcola("Mario", "Rossi", "1980-01-01", "M", "INVALID")
     end
   end
+
+  describe "valida/2" do
+    test "successfully validates a correct codice fiscale" do
+      assert {:ok, "Il codice fiscale corrisponde ai dati anagrafici."} =
+               CodiceFiscale.verifica(
+                 "RSSMRA80A01H501U",
+                 %{nome: "Mario", cognome: "Rossi", data_nascita: "1980-01-01", sesso: "M", codice: "H501"}
+               )
+    end
+
+    test "returns error for incorrect codice fiscale" do
+      assert {:error, "Il codice fiscale non corrisponde ai dati anagrafici."} =
+               CodiceFiscale.verifica(
+                 "RSSMRA80A01H501X",
+                 %{nome: "Mario", cognome: "Rossi", data_nascita: "1980-01-01", sesso: "M", codice: "H501"}
+               )
+    end
+
+    test "returns error for invalid name in data" do
+      assert {:error, "Errore nel calcolo del codice fiscale: Nome non valido"} =
+               CodiceFiscale.verifica(
+                 "RSSMRA80A01H501U",
+                 %{nome: "123", cognome: "Rossi", data_nascita: "1980-01-01", sesso: "M", codice: "H501"}
+               )
+    end
+
+    test "returns error for invalid surname in data" do
+      assert {:error, "Errore nel calcolo del codice fiscale: Cognome non valido"} =
+               CodiceFiscale.verifica(
+                 "RSSMRA80A01H501U",
+                 %{nome: "Mario", cognome: "123", data_nascita: "1980-01-01", sesso: "M", codice: "H501"}
+               )
+    end
+
+    test "returns error for invalid date of birth in data" do
+      assert {:error, "Errore nel calcolo del codice fiscale: Data di nascita non valida"} =
+               CodiceFiscale.verifica(
+                 "RSSMRA80A01H501U",
+                 %{nome: "Mario", cognome: "Rossi", data_nascita: "1980-13-01", sesso: "M", codice: "H501"}
+               )
+    end
+
+    test "returns error for invalid gender in data" do
+      assert {:error, "Errore nel calcolo del codice fiscale: Sesso non valido"} =
+               CodiceFiscale.verifica(
+                 "RSSMRA80A01H501U",
+                 %{nome: "Mario", cognome: "Rossi", data_nascita: "1980-01-01", sesso: "X", codice: "H501"}
+               )
+    end
+
+    test "returns error for invalid ISTAT code in data" do
+      assert {:error, "Errore nel calcolo del codice fiscale: Codice non valido"} =
+               CodiceFiscale.verifica(
+                 "RSSMRA80A01H501U",
+                 %{nome: "Mario", cognome: "Rossi", data_nascita: "1980-01-01", sesso: "M", codice: "INVALID"}
+               )
+    end
+  end
 end
