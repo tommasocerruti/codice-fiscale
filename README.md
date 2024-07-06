@@ -1,5 +1,5 @@
 # CodiceFiscale
-[![Language](https://img.shields.io/badge/language-elixir-blue.svg)](https://elixir-lang.org/)
+[![Language](https://img.shields.io/badge/language-elixir-purple.svg)](https://elixir-lang.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
