@@ -12,7 +12,7 @@ defmodule CodiceFiscale do
 
   """
   def calcola(nome, cognome, data_nascita, sesso, codice) do
-    Logger.info("Calcolo del codice fiscale per #{nome} #{cognome}")
+    log_info("Calcolo del codice fiscale per #{nome} #{cognome}")
 
     cognome_processed = StringProcessor.process(cognome)
     nome_processed = StringProcessor.process(nome)
@@ -31,7 +31,7 @@ defmodule CodiceFiscale do
       {:ok, "#{parziale}#{carattere_controllo}"}
     else
       {:error, msg} ->
-        Logger.error("Errore nel calcolo del codice fiscale: #{msg}")
+        log_error("Errore nel calcolo del codice fiscale: #{msg}")
         {:error, msg}
     end
   end
@@ -41,20 +41,38 @@ defmodule CodiceFiscale do
         %{nome: nome, cognome: cognome, data_nascita: data_nascita, sesso: sesso, codice: codice} =
           _dati_anagrafici
       ) do
-    Logger.info("Verifica che #{codice_fiscale} sia il codice fiscale di #{nome} #{cognome}")
+    log_info("Verifica che #{codice_fiscale} sia il codice fiscale di #{nome} #{cognome}")
 
     case calcola(nome, cognome, data_nascita, sesso, codice) do
       {:ok, codice_calcolato} ->
         if codice_calcolato == codice_fiscale do
-          Logger.info("Il codice fiscale corrisponde ai dati anagrafici.")
+          log_info("Il codice fiscale corrisponde ai dati anagrafici.")
           {:ok, "Il codice fiscale corrisponde ai dati anagrafici."}
         else
-          Logger.warning("Il codice fiscale non corrisponde ai dati anagrafici.")
+          log_warning("Il codice fiscale non corrisponde ai dati anagrafici.")
           {:error, "Il codice fiscale non corrisponde ai dati anagrafici."}
         end
 
       {:error, msg} ->
         {:error, "Errore nel calcolo del codice fiscale: #{msg}"}
+    end
+  end
+
+  defp log_info(message) do
+    if Application.get_env(:codice_fiscale, :logging_enabled, true) do
+      Logger.info(message)
+    end
+  end
+
+  defp log_warning(message) do
+    if Application.get_env(:codice_fiscale, :logging_enabled, true) do
+      Logger.warning(message)
+    end
+  end
+
+  defp log_error(message) do
+    if Application.get_env(:codice_fiscale, :logging_enabled, true) do
+      Logger.error(message)
     end
   end
 end

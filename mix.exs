@@ -7,10 +7,12 @@ defmodule CodiceFiscale.MixProject do
       version: "0.1.0",
       elixir: "~> 1.16.1",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps(),
       elixirc_paths: elixirc_paths(Mix.env()),
       description: "Library to calculate Italian fiscal code (codice fiscale).",
       package: package(),
+      runtime: [config_path: "config/config.exs"],
       source_url: "https://github.com/tommasocerruti/codice_fiscale"
     ]
   end
@@ -18,6 +20,12 @@ defmodule CodiceFiscale.MixProject do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  defp aliases do
+    [
+      ci: ["ci"]
     ]
   end
 
