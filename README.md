@@ -1,6 +1,7 @@
 # CodiceFiscale
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Language](https://img.shields.io/badge/language-elixir-blue.svg)](https://elixir-lang.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 `CodiceFiscale` is an Elixir library providing different functions regarding the Italian fiscal code (codice fiscale).   
 It provides functions to generate a codice fiscale based on personal information and validate whether a given codice fiscale corresponds to provided personal data.
