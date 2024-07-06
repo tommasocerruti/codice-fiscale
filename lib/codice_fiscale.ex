@@ -8,7 +8,7 @@ defmodule CodiceFiscale do
   ## Esempio
 
       iex> CodiceFiscale.calcola("Mario", "Rossi", "1980-01-01", "M", "H501")
-      {:ok, "RSSMRA80A01H501X"}
+      {:ok, "RSSMRA80A01H501U"}
 
   """
   def calcola(nome, cognome, data_nascita, sesso, codice) do
@@ -35,4 +35,6 @@ defmodule CodiceFiscale do
         {:error, msg}
     end
   end
+
+
 end
