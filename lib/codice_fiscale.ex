@@ -36,5 +36,22 @@ defmodule CodiceFiscale do
     end
   end
 
+  def valida(codice_fiscale,  %{nome: nome, cognome: cognome, data_nascita: data_nascita, sesso: sesso, codice: codice} = _dati_anagrafici) do
+    case calcola(nome, cognome, data_nascita, sesso, codice) do
+      {:ok, codice_calcolato} ->
+        if codice_calcolato == codice_fiscale do
+          Logger.info("Il codice fiscale corrisponde ai dati anagrafici.")
+          {:ok, "Il codice fiscale corrisponde ai dati anagrafici."}
+        else
+          Logger.warning("Il codice fiscale non corrisponde ai dati anagrafici.")
+          {:error, "Il codice fiscale non corrisponde ai dati anagrafici."}
+        end
+
+      {:error, msg} ->
+        Logger.error("Errore nel calcolo del codice fiscale: #{msg}")
+        {:error, "Errore nel calcolo del codice fiscale: #{msg}"}
+    end
+  end
+
 
 end
