@@ -36,7 +36,7 @@ defmodule CodiceFiscale do
     end
   end
 
-  def valida(
+  def corrisponde?(
         codice_fiscale,
         %{nome: nome, cognome: cognome, data_nascita: data_nascita, sesso: sesso, codice: codice} =
           _dati_anagrafici
