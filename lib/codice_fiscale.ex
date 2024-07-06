@@ -36,11 +36,12 @@ defmodule CodiceFiscale do
     end
   end
 
-  def corrisponde?(
+  def verifica(
         codice_fiscale,
         %{nome: nome, cognome: cognome, data_nascita: data_nascita, sesso: sesso, codice: codice} =
           _dati_anagrafici
       ) do
+
     case calcola(nome, cognome, data_nascita, sesso, codice) do
       {:ok, codice_calcolato} ->
         if codice_calcolato == codice_fiscale do
@@ -55,5 +56,9 @@ defmodule CodiceFiscale do
         Logger.error("Errore nel calcolo del codice fiscale: #{msg}")
         {:error, "Errore nel calcolo del codice fiscale: #{msg}"}
     end
+  end
+
+  def valido?(codice_fiscale) do
+
   end
 end
