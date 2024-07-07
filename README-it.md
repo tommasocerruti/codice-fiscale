@@ -20,7 +20,7 @@ Aggiungi `CodiceFiscale` come dipendenza nel tuo file `mix.exs`:
 ```elixir
 defp deps do
   [
-    {:codice_fiscale, "~> 0.1.0"}
+    {:codice_fiscale, "~> 0.1.1"}
   ]
 end
 ```
