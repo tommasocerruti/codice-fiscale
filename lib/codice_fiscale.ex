@@ -7,8 +7,8 @@ defmodule CodiceFiscale do
   """
 
   @doc """
-  ITA: Calcola il codice fiscale dato un nome, cognome, data di nascita, sesso e codice Belfiore del luogo di nascita.
-  ENG: Calculates the codice fiscale given a name, surname, birthdate, sex and Belfiore code of the birthplace.
+  ITA: Calcola il codice fiscale dato un nome, cognome, data di nascita, sesso e codice catastale del luogo di nascita.
+  ENG: Calculates the codice fiscale given a name, surname, birthdate, sex and catastale code of the birthplace.
 
   ## Example
 
@@ -43,7 +43,7 @@ defmodule CodiceFiscale do
 
   @doc """
   ITA: Verifica se un codice fiscale calcolato corrisponde ai dati anagrafici forniti.
-  ENG: Verifies if a codice fiscale calculated corresponds to the given anagraphic data.
+  ENG: Verifies if a codice fiscale calculated corresponds to the provided anagraphic data.
 
   ## Esempio
 

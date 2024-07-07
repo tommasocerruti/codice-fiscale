@@ -10,8 +10,8 @@ La documentazione è disponibile su https://hexdocs.pm/codice_fiscale.
 
 ## Funzionalità
 
-- **Calcolo del Codice Fiscale:** Dato un nome, cognome, data di nascita, sesso e codice Belfiore del luogo di nascita, calcola il corrispondente codice fiscale.
-- **Verifica del Codice Fiscale:** Controlla se un codice fiscale fornito corrisponde al codice fiscale atteso basato sui dati personali forniti.
+- **Calcolo del Codice Fiscale:** Dato un nome, cognome, data di nascita, sesso e [codice catastale](https://it.wikipedia.org/wiki/Codice_catastale) del luogo di nascita, calcola il corrispondente codice fiscale.
+- **Verifica del Codice Fiscale:** Controlla se un codice fiscale fornito corrisponde al codice fiscale atteso basato sui dati anagrafici forniti.
 
 ## Installazione
 
@@ -33,7 +33,7 @@ $ mix deps.get
 
 ## Utilizzo
 ### Calcolo del Codice Fiscale
-Calcola il codice fiscale dati nome, cognome, data di nascita, sesso e codice Belfiore.
+Calcola il codice fiscale dati nome, cognome, data di nascita, sesso e codice catastale del luogo di nascita.
 ```elixir
 iex> CodiceFiscale.calcola("Mario", "Rossi", "1980-01-01", "M", "H501")
 {:ok, "RSSMRA80A01H501U"}

@@ -4,14 +4,14 @@
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 `CodiceFiscale` is an [Elixir](https://elixir-lang.org/) library providing different functions regarding the Italian fiscal code (codice fiscale).   
-It provides functions to generate a codice fiscale based on personal information and validate whether a given codice fiscale corresponds to provided personal data.  
+It provides functions to generate a codice fiscale based on anagraphic data and validate whether a given codice fiscale corresponds to the provided anagraphic data.  
 Documentation can be found at https://hexdocs.pm/codice_fiscale.    
 *Per leggere questo README in italiano, clicca [qui](README-it.md).*
 
 ## Features
 
-- **Calculate Codice Fiscale:** Given a name, surname, birthdate, sex, and Belfiore code of the birthplace, it computes the corresponding codice fiscale.
-- **Verify Codice Fiscale:** Checks if a provided codice fiscale matches the expected codice fiscale based on given personal data.
+- **Calculate Codice Fiscale:** Given a name, surname, birthdate, sex, and [catastale code](https://it.wikipedia.org/wiki/Codice_catastale) of the birthplace, it computes the corresponding codice fiscale.
+- **Verify Codice Fiscale:** Checks if a provided codice fiscale matches the expected codice fiscale based on the provided anagraphic data.
 
 ## Installation
 
@@ -33,7 +33,7 @@ $ mix deps.get
 
 ## Usage
 ### Calculate Codice Fiscale
-Calculates codice fiscale given name, surname, birthdate, sex and Belfiore code.    
+Calculates codice fiscale given name, surname, birthdate, sex and catastale code of the birthplace.    
 ```elixir
 iex> CodiceFiscale.calcola("Mario", "Rossi", "1980-01-01", "M", "H501")
 {:ok, "RSSMRA80A01H501U"}
