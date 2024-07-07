@@ -27,3 +27,7 @@ codice_fiscale-*.tar
 
 # Ignore future implementations/ideas
 /defferred/
+
+# Ignore plt built by dializer
+/priv/plts/*.plt
+/priv/plts/*.plt.hash
