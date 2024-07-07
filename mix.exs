@@ -9,6 +9,9 @@ defmodule CodiceFiscale.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
+      dialyzer: [
+        plt_file: {:no_warn, "priv/plts/project.plt"}
+      ],
       elixirc_paths: elixirc_paths(Mix.env()),
       description: "Library to calculate Italian fiscal code (codice fiscale).",
       package: package(),
