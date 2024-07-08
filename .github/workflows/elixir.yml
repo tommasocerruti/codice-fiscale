@@ -32,5 +32,5 @@ jobs:
       run: mix deps.get
     - name: Compile the project
       run: mix compile
-    - name: Run tests
-      run: mix test
+    - name: Run CI tests
+      run: mix ci
