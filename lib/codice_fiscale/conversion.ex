@@ -1,6 +1,8 @@
 defmodule CodiceFiscale.Conversion do
   @moduledoc """
-  Convert the parameters to the respective format useful for codice fiscale.
+  ITA: Converte i parametri nei rispettivi formati utili per il codice fiscale.
+
+  ENG: Convert the parameters to the respective format useful for codice fiscale.
   """
 
   @vocals ["A", "E", "I", "O", "U"]
@@ -19,6 +21,16 @@ defmodule CodiceFiscale.Conversion do
     "12" => "T"
   }
 
+  @doc """
+  ITA: Converte il nome nel formato richiesto per il codice fiscale.
+
+  ENG: Converts the given name into the format required for codice fiscale.
+
+  ## Example
+
+      iex> CodiceFiscale.Conversion.nome("Mario")
+      "MRA"
+  """
   def nome(nome) do
     consonanti = String.graphemes(nome) |> Enum.filter(&consonante?/1)
     vocali = String.graphemes(nome) |> Enum.filter(&vocale?/1)
@@ -35,6 +47,16 @@ defmodule CodiceFiscale.Conversion do
     Enum.join(risultato)
   end
 
+  @doc """
+  ITA: Converte il cognome nel formato richiesto per il codice fiscale.
+
+  ENG: Converts the given surname into the format required for codice fiscale.
+
+  ## Example
+
+      iex> CodiceFiscale.Conversion.cognome("Rossi")
+      "RSS"
+  """
   def cognome(cognome) do
     consonanti = String.graphemes(cognome) |> Enum.filter(&consonante?/1)
     vocali = String.graphemes(cognome) |> Enum.filter(&vocale?/1)
@@ -50,6 +72,19 @@ defmodule CodiceFiscale.Conversion do
     Enum.join(risultato)
   end
 
+  @doc """
+  ITA: Converte la data di nascita e il sesso nel formato richiesto per il codice fiscale.
+
+  ENG: Converts the given birthdate and gender into the format required for codice fiscale.
+
+  ## Example
+
+      iex> CodiceFiscale.Conversion.data_nascita("1980-05-15", "M")
+      "80E15"
+
+      iex> CodiceFiscale.Conversion.data_nascita("1980-05-15", "F")
+      "80E55"
+  """
   def data_nascita(data_nascita, sesso) do
     {yyyy, mm, dd} = parse_date(data_nascita)
     year = String.slice(Integer.to_string(yyyy), 2, 2)
@@ -58,15 +93,18 @@ defmodule CodiceFiscale.Conversion do
     "#{year}#{month}#{String.pad_leading(day, 2, "0")}"
   end
 
+  @doc false
   defp parse_date(date) do
     [yyyy, mm, dd] = String.split(date, "-")
     {String.to_integer(yyyy), mm, String.to_integer(dd)}
   end
 
+  @doc false
   defp vocale?(char) do
     char in @vocals
   end
 
+  @doc false
   defp consonante?(char) do
     char not in @vocals
   end

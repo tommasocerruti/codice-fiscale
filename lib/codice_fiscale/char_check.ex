@@ -1,6 +1,8 @@
 defmodule CodiceFiscale.CharCheck do
   @moduledoc """
-  Calculates the check character of codice fisale.
+  ITA: Calcola il carattere di controllo del codice fiscale.
+
+  ENG: Calculates the check character of codice fiscale.
   """
   @letters "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -83,12 +85,14 @@ defmodule CodiceFiscale.CharCheck do
   }
 
   @doc """
-  Calcola il carattere di controllo per il codice fiscale.
+  ITA: Calcola il carattere di controllo per il codice fiscale.
 
-  ## Esempio
+  ENG: Calculates the check character for the codice fiscale.
 
-      iex> CodiceFiscale.CharCheck.calcola_carattere_controllo("CRRTMS02P26D969")
-      "D"
+  ## Example
+
+      iex> CodiceFiscale.CharCheck.calcola_carattere_controllo("RSSMRA80A01H501")
+      "U"
   """
   def calcola_carattere_controllo(codice) do
     codice

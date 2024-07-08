@@ -3,7 +3,9 @@ defmodule CodiceFiscale do
   require Logger
 
   @moduledoc """
-  Module containing the main functions regarding codice fiscale.
+  ITA: Modulo contenente le funzioni principali riguardanti il codice fiscale.
+
+  ENG: Module containing the main functions regarding codice fiscale.
   """
 
   @doc """
@@ -47,7 +49,7 @@ defmodule CodiceFiscale do
 
   ENG: Verifies if a codice fiscale calculated corresponds to the provided anagraphic data.
 
-  ## Esempio
+  ## Example
 
       iex> CodiceFiscale.verifica("RSSMRA80A01H501U", %{nome: "Mario", cognome: "Rossi", data_nascita: "1980-01-01", sesso: "M", codice: "H501"})
       {:ok, "Il codice fiscale corrisponde ai dati anagrafici."}
