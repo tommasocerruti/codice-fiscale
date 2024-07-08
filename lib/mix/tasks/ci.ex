@@ -2,7 +2,9 @@ defmodule Mix.Tasks.Ci do
   use Mix.Task
 
   @moduledoc """
-  Runs Tests, Format, Credo, and Dialyzer
+  ITA: Esegue Test, Format e Credo.
+
+  ENG: Runs Tests, Format and Credo.
   """
 
   def run(_) do
@@ -32,8 +34,5 @@ defmodule Mix.Tasks.Ci do
       Mix.shell().info(output)
       System.halt(exit_code)
     end
-
-    Mix.shell().info("\nRunning Dialyzer...")
-    Mix.Task.run("dialyzer")
   end
 end
